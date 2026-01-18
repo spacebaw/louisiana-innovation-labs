@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Engines } from './components/Engines';
 import { Foundation } from './components/Foundation';
@@ -24,8 +23,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-primary-navy">
-      <Header />
+    <div className="min-h-screen bg-surface">
       <Hero />
       <Engines />
       <Foundation />
