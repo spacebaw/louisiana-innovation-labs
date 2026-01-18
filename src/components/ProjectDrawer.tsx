@@ -11,13 +11,13 @@ interface ProjectDrawerProps {
 const getStatusColor = (status: string): string => {
   switch (status) {
     case 'Active':
-      return 'bg-green-500/20 text-green-300 border-green-400/50';
+      return 'bg-green-50 text-green-600 border-green-200';
     case 'Pilot':
-      return 'bg-yellow-500/20 text-yellow-300 border-yellow-400/50';
+      return 'bg-yellow-50 text-yellow-600 border-yellow-200';
     case 'In Design':
-      return 'bg-blue-500/20 text-blue-300 border-blue-400/50';
+      return 'bg-blue-50 text-blue-600 border-blue-200';
     default:
-      return 'bg-gray-500/20 text-gray-300 border-gray-400/50';
+      return 'bg-gray-100 text-gray-600 border-gray-200';
   }
 };
 
@@ -60,20 +60,20 @@ export const ProjectDrawer: React.FC<ProjectDrawerProps> = ({ project, isOpen, o
 
       {/* Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-full md:w-[600px] bg-gradient-to-br from-primary-navy via-background-slate to-primary-navy border-l-2 border-accent-teal/40 z-50 transform transition-transform duration-300 ease-out overflow-y-auto ${
+        className={`fixed top-0 right-0 h-full w-full md:w-[600px] bg-white border-l-2 border-gray-200 z-50 transform transition-transform duration-300 ease-out overflow-y-auto ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="p-6 md:p-8">
           {/* Header */}
           <div className="flex justify-between items-start mb-6">
-            <h2 className="text-3xl font-bold text-accent-teal">{project.name}</h2>
+            <h2 className="text-3xl font-bold text-text-primary">{project.name}</h2>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-accent-teal/10 rounded-lg transition-colors duration-200"
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
               aria-label="Close drawer"
             >
-              <X className="w-6 h-6 text-accent-teal" />
+              <X className="w-6 h-6 text-text-primary" />
             </button>
           </div>
 
@@ -86,20 +86,20 @@ export const ProjectDrawer: React.FC<ProjectDrawerProps> = ({ project, isOpen, o
 
           {/* Project Brief */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold mb-3 text-accent-teal">Project Brief</h3>
-            <p className="text-gray-300 leading-relaxed">{project.brief}</p>
+            <h3 className="text-xl font-bold mb-3 text-text-primary">Project Brief</h3>
+            <p className="text-text-secondary leading-relaxed">{project.brief}</p>
           </div>
 
           {/* Master Orchestrator Partners */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4 text-accent-teal">Master Orchestrator Partners</h3>
+            <h3 className="text-xl font-bold mb-4 text-text-primary">Master Orchestrator Partners</h3>
             <div className="space-y-2">
               {project.partners.map((partner, index) => (
                 <div
                   key={index}
-                  className="bg-background-slate/40 backdrop-blur-md border border-accent-teal/20 rounded-lg p-3 hover:border-accent-teal/40 transition-colors duration-200"
+                  className="bg-gray-50 border border-gray-200 rounded-lg p-3 hover:border-primary-blue transition-colors duration-200"
                 >
-                  <p className="text-gray-200 font-medium">{partner}</p>
+                  <p className="text-text-primary font-medium">{partner}</p>
                 </div>
               ))}
             </div>
@@ -107,12 +107,12 @@ export const ProjectDrawer: React.FC<ProjectDrawerProps> = ({ project, isOpen, o
 
           {/* Engine Tag */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold mb-3 text-accent-teal">Engine</h3>
-            <p className="text-gray-300">{project.engine}</p>
+            <h3 className="text-xl font-bold mb-3 text-text-primary">Engine</h3>
+            <p className="text-text-secondary">{project.engine}</p>
           </div>
 
           {/* Strategic Deep-Dive Button */}
-          <button className="w-full bg-accent-teal text-primary-navy font-bold py-4 rounded-lg hover:bg-accent-teal/90 transition-all duration-200 hover:scale-[1.02] flex items-center justify-center gap-2 shadow-lg shadow-accent-teal/30">
+          <button className="w-full bg-primary-blue text-white font-bold py-4 rounded-lg hover:bg-blue-600 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg">
             Strategic Deep-Dive
             <ExternalLink className="w-5 h-5" />
           </button>
