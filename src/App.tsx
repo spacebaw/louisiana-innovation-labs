@@ -2,9 +2,7 @@ import { useState } from 'react';
 import { Hero } from './components/Hero';
 import { Engines } from './components/Engines';
 import { Foundation } from './components/Foundation';
-import { ProjectGrid } from './components/ProjectGrid';
 import { ProjectDrawer } from './components/ProjectDrawer';
-import { projects } from './data';
 import type { Project } from './types';
 
 function App() {
@@ -25,9 +23,8 @@ function App() {
   return (
     <div className="min-h-screen bg-surface">
       <Hero />
-      <Engines />
+      <Engines onProjectClick={handleProjectClick} />
       <Foundation />
-      <ProjectGrid projects={projects} onProjectClick={handleProjectClick} />
       <ProjectDrawer
         project={selectedProject}
         isOpen={isDrawerOpen}
