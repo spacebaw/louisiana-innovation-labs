@@ -38,39 +38,43 @@ export const Engines: React.FC<EnginesProps> = ({ onProjectClick }) => {
     return projects.filter(project => project.engine === engineTitle);
   };
 
+  const engineProjects = expandedEngine ? getProjectsForEngine(expandedEngine) : [];
+
   return (
     <section className="py-12 md:py-16 px-4">
-      <div className="max-w-7xl mx-auto space-y-8">
-        {engines.map((engine) => {
-          const isExpanded = expandedEngine === engine.title;
-          const engineProjects = getProjectsForEngine(engine.title);
+      <div className="max-w-7xl mx-auto">
+        {/* Horizontal layout for the 3 pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
+          {engines.map((engine) => {
+            const isExpanded = expandedEngine === engine.title;
+            return (
+              <EngineCard
+                key={engine.title}
+                title={engine.title}
+                icon={engine.icon}
+                focus={engine.focus}
+                onClick={() => handleEngineClick(engine.title)}
+                isExpanded={isExpanded}
+              />
+            );
+          })}
+        </div>
 
-          return (
-            <div key={engine.title} className="space-y-6">
-              <div className={`transition-all duration-300 ${isExpanded ? 'md:col-span-3' : ''}`}>
-                <EngineCard
-                  title={engine.title}
-                  icon={engine.icon}
-                  focus={engine.focus}
-                  onClick={() => handleEngineClick(engine.title)}
-                  isExpanded={isExpanded}
+        {/* Dropdown projects appear vertically below all pillars */}
+        {expandedEngine && (
+          <div className="mt-8 animate-in fade-in slide-in-from-top-4 duration-300">
+            <h3 className="text-2xl font-bold mb-6 text-text-primary">{expandedEngine} Projects</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {engineProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  onClick={() => onProjectClick(project)}
                 />
-              </div>
-
-              {isExpanded && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pl-4 md:pl-8 animate-in fade-in slide-in-from-top-4 duration-300">
-                  {engineProjects.map((project) => (
-                    <ProjectCard
-                      key={project.id}
-                      project={project}
-                      onClick={() => onProjectClick(project)}
-                    />
-                  ))}
-                </div>
-              )}
+              ))}
             </div>
-          );
-        })}
+          </div>
+        )}
       </div>
     </section>
   );
