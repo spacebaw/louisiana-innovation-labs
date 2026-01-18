@@ -1,0 +1,88 @@
+import type { Project } from './types';
+
+export const projects: Project[] = [
+  // Innovation Sandboxes
+  {
+    id: 'persona-ai',
+    name: 'Persona AI',
+    engine: 'Innovation Sandboxes',
+    primaryPartner: 'Persona AI',
+    brief: 'De-risking humanoid robotics deployment through controlled regulatory and technical access environments. Creating pathways for safe integration of advanced robotics into Louisiana\'s industrial landscape.',
+    partners: ['Persona AI', 'Louisiana Economic Development', 'Port of South Louisiana'],
+    status: 'Active',
+  },
+  {
+    id: 'waymo-nola',
+    name: 'Waymo NOLA',
+    engine: 'Innovation Sandboxes',
+    primaryPartner: 'Waymo',
+    brief: 'Autonomous mobility testing and deployment in New Orleans. Establishing regulatory frameworks and public trust for self-driving technology in complex urban environments.',
+    partners: ['Waymo', 'City of New Orleans', 'RTA', 'Louisiana Department of Transportation'],
+    status: 'Pilot',
+  },
+  {
+    id: 'ldi-fraud',
+    name: 'LDI Fraud',
+    engine: 'Innovation Sandboxes',
+    primaryPartner: 'Louisiana Department of Insurance',
+    brief: 'Predictive data analytics for fraud detection and prevention. Building secure data-sharing protocols and AI-powered systems to protect Louisiana consumers and insurers.',
+    partners: ['Louisiana Department of Insurance', 'Louisiana State Police', 'FBI New Orleans'],
+    status: 'Active',
+  },
+  {
+    id: 'ldoe-suite',
+    name: 'LDOE Suite',
+    engine: 'Innovation Sandboxes',
+    primaryPartner: 'Louisiana Department of Education',
+    brief: 'EdTech vetting and piloting framework for K-12 innovation. Creating safe testing grounds for educational technology before statewide deployment.',
+    partners: ['Louisiana Department of Education', 'OPSB', 'Jump Start Coalition'],
+    status: 'In Design',
+  },
+  {
+    id: 'pactec-inc',
+    name: 'PacTec Inc',
+    engine: 'Innovation Sandboxes',
+    primaryPartner: 'PacTec Inc',
+    brief: 'Industrial ROI validation for advanced manufacturing technologies. Demonstrating economic impact and technical viability of next-generation industrial systems.',
+    partners: ['PacTec Inc', 'LED FastStart', 'LSU Mechanical Engineering'],
+    status: 'Active',
+  },
+  // Commercialization Studios
+  {
+    id: 'newlab-nola',
+    name: 'Newlab NOLA',
+    engine: 'Commercialization Studios',
+    primaryPartner: 'Shell',
+    brief: 'New energy commercialization hub bringing breakthrough energy technologies to market. Partner-led factory model enabling spin-outs and wealth creation in Louisiana\'s energy transition.',
+    partners: ['Shell', 'LSU FUEL', 'City of NOLA', 'GNO Inc.'],
+    status: 'Active',
+  },
+  {
+    id: 'wisla',
+    name: 'WISLA',
+    engine: 'Commercialization Studios',
+    primaryPartner: 'Water Campus',
+    brief: 'Water Innovation Studio of Louisiana. Commercializing water management and treatment technologies through strategic partnerships and real-world deployment.',
+    partners: ['Water Campus', 'LSU Water Resources Research Institute', 'CPRA'],
+    status: 'Active',
+  },
+  // Workforce & Talent
+  {
+    id: 'hyperscale-academy',
+    name: 'Hyperscale Academy',
+    engine: 'Workforce & Talent',
+    primaryPartner: 'Louisiana Community & Technical College System',
+    brief: 'Technical certification programs designed for the $40B+ hyperscale economy. Scaling human capacity to meet the demands of data centers, advanced manufacturing, and industrial automation.',
+    partners: ['LCTCS', 'Meta', 'AWS', 'Google', 'Microsoft'],
+    status: 'Active',
+  },
+  {
+    id: 'the-vibe-lab',
+    name: 'The Vibe Lab',
+    engine: 'Workforce & Talent',
+    primaryPartner: 'Orleans Parish School Board',
+    brief: 'K-12 software creation and computational thinking initiative. Building the next generation of Louisiana technologists through hands-on creation and entrepreneurship.',
+    partners: ['Orleans Parish School Board', 'Code.org', 'Apple', 'The Idea Village'],
+    status: 'Pilot',
+  },
+];
